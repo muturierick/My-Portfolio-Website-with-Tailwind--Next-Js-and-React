@@ -33,8 +33,8 @@ const Experience = () => {
     }      
     );
   return (
-    <div className='my-32'>
-        <h2 className='font-bold text-8xl mb-20 w-full text-center'>
+    <div className='my-10'>
+        <h2 className='font-bold text-8xl mb-10 w-full text-center'>
             Experience
         </h2>
         <div ref={ref} className='w-[75%] mx-auto relative'>
