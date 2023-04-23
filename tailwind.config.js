@@ -25,7 +25,22 @@ module.exports = {
         blue: '#334FFF',
         primary: "#B63E96", // 240,86,199
         primaryDark: "#58E6D9", // 80,230,217
-      }
+      },
+      animation: {
+        'spin-slow': 'spin 8s linear infinite',
+      },
+       fontSize: {
+          sm: '0.8rem',
+          base: '1rem',
+          xl: '1.25rem',
+          '2xl': '1.563rem',
+          '3xl': '1.953rem',
+          '4xl': '2.441rem',
+          '5xl': '3.052rem',
+    },
+    backgroundImage:{
+      circularLight: 'repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px, #f5f5f5 100px);'
+    }
     },
   },
   plugins: [],
