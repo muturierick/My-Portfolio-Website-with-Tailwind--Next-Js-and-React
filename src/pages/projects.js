@@ -6,13 +6,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import project1 from '../../public/images/projects/crypto-screener-cover-image.jpg'
+import { motion } from 'framer-motion'
+
+const FramerImage = motion(Image);
 
 const FeaturedProject = ({type, title, summary, link, img, github}) => {
     return (
-        <article className='w-full flex items-center justify-between relative rounded-3xl border border-solid rounded-br-2xl border-dark bg-light shadow-2xl p-12'>
-            <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] rounded-br-3xl bg-dark'/>
-                <Link href={link} target='_blank ' className='w-1/2 cursor-pointer overflow-hidden rounded-lg'>
-                    <Image src={img} alt={title} className='w-full h-auto'/>
+        <article className='w-full flex items-center justify-between relative rounded-3xl border border-solid rounded-br-2xl border-dark bg-light shadow-2xl p-12 border-r-8 border-b-8'>
+               <Link href={link} target='_blank ' className='w-1/2 cursor-pointer overflow-hidden rounded-lg'>
+                    <FramerImage src={img} alt={title} className='w-full h-auto' whileHover={{scale:1.05}} transition={{duration:0.2}}/>
                 </Link>
 
                 <div className='w-1/2 flex flex-col items-start justify-between pl-6'>
@@ -31,10 +33,9 @@ const FeaturedProject = ({type, title, summary, link, img, github}) => {
 }
 const Project = ({title, type, img, link, github}) => {
     return(
-        <article className='w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative'>
-           <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] rounded-br-3xl bg-dark'/>           
+        <article className='relative w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 border-r-8 border-b-8'>
             <Link href={link} target='_blank ' className='w-full cursor-pointer overflow-hidden rounded-lg'>
-                <Image src={img} alt={title} className='w-full h-auto'/>
+                <FramerImage src={img} alt={title} className='w-full h-auto' whileHover={{scale:1.05}} transition={{duration:0.2}}/>
             </Link>
 
             <div className='w-full flex flex-col items-start justify-between mt-4'>
