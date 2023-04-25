@@ -9,6 +9,7 @@ import { useInView, useMotionValue, useSpring } from 'framer-motion'
 import Skills from '@/components/Skills'
 import Experience from '@/components/Experience'
 import Education from '@/components/Education'
+import TransitionEffect from '@/components/TransitionEffect'
 
 const AnimatedNumbers = ({value}) => {
 const ref = useRef(null);
@@ -41,14 +42,18 @@ const about = () => {
     <>
         <Head>
             <title>Erick Muturi | About Page </title>
-            <meta name="description" content='All about Erick Muturi'></meta>
+            <meta name="description" content="Introduction to Erick Muturi CEO Of Luku Green and Arifa Africa, a free lancer, developer, actor, blogger and writer
+            Erick Muturi's Professional Portfolio: Showcasing Web Design, Graphic Design, Software development Expertise.
+             Explore a diverse collection of creative projects, client testimonials, and industry insights. 
+            Contact for freelance opportunities and collaborations"></meta>
         </Head>
-        <main className='flex w-full flex-col items-center justify-center'>
+        <TransitionEffect/>
+        <main className='flex w-full flex-col items-center justify-center dark:text-light'>
             <Layout className='pt-16'>
-                <AnimatedText text="Passion fuels Purpose" className='!text-7xl mb-20'/>
-                <div className='grid w-full grid-cols-8 gap-16'>
-                    <div className='col-span-3 flex flex-col items-start justify-start'>
-                        <h2 className='mb-4 text-lg font-bolf uppercase text-dark/75'>Biography</h2>
+                <AnimatedText text="Passion fuels Purpose" className='!text-7xl mb-16 sm:!text-6xl xs:text-4xl sm:mb-8'/>
+                <div className='grid w-full grid-cols-8 gap-16 sm:gap-8'>
+                    <div className='col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8'>
+                        <h2 className='mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75'>Biography</h2>
                         <p className='font-medium'>
                             Hi, I'm CodeBucks, a web developer and UI/UX designer with a passion for creating beautiful, functional, 
                             and user-centered digital experiences. With 4 years of experience in the field. I am always looking for 
@@ -64,29 +69,33 @@ const about = () => {
                             every project I work on. I look forward to the opportunity to bring my skills and passion to your next project.
                         </p>
                     </div>
-                    <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8'>
-                        <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark'/>
-                        <Image src={profilePic} alt='Erick Muturi' className='rounded-2xl w-full h-auto'/>
+                    <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 dark:bg-dark dark:border-light xl:col-span-4 md:order-1 md:col-span-8'>
+                        <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light'/>
+                        <Image src={profilePic} alt='Erick Muturi' className='rounded-2xl w-full h-auto'
+                         priority
+                         sizes="(max-width:768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+             
+                        />
                     </div>
-                    <div className='col-span-2 flex flex-col items-end justify-between'>
-                        <div className='flex flex-col items-end justify-center'>
-                            <span className='inline-block text-7xl font-bold'> 
+                    <div className='col-span-2 flex flex-col items-end justify-between xl:col-span-8 xl:flex-row xl:items-center md:order-3'>
+                        <div className='flex flex-col items-end justify-center xl:items-center'>
+                            <span className='inline-block text-7xl font-bold  md:text-6xl sm:text-5xl xs:text-4xl'> 
                                 <AnimatedNumbers value={50}/>+
                                 
                              </span>
-                            <h2 className='text-xl text-dark/75 capitalize font-medium'>satisfied customers</h2>
+                            <h2 className='text-xl text-dark/75 capitalize font-medium dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm'>satisfied customers</h2>
                         </div>
-                        <div className='flex flex-col items-end justify-center'>
-                            <span className='inline-block text-7xl font-bold'> 
+                        <div className='flex flex-col items-end justify-center xl:items-center'>
+                            <span className='inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl'> 
                                 <AnimatedNumbers value={30}/>+
                              </span>
-                            <h2 className='text-xl text-dark/75 capitalize font-medium'>Completed projects</h2>
+                            <h2 className='text-xl text-dark/75 capitalize font-medium dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm'>Completed projects</h2>
                         </div>
-                        <div className='flex flex-col items-end justify-center'>
-                            <span className='inline-block text-7xl font-bold'> 
+                        <div className='flex flex-col items-end justify-center xl:items-center'>
+                            <span className='inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl'> 
                                 <AnimatedNumbers value={3}/>+
                              </span>
-                            <h2 className='text-xl text-dark/75 capitalize font-medium'>Years of Experience</h2>
+                            <h2 className='text-xl text-dark/75 capitalize font-medium dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm'>Years of Experience</h2>
                         </div>
                     </div>
                 </div>
